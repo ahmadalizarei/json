@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <script>
+    /* Storing multi-line JSON string in a JS variable
+    using the new ES6 template literals */
+    var json = `{
+"symbols":[
+  {
+"symbol": "کاذر",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  },
+   {
+"symbol": "خاور",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  },
+   {
+"symbol": "رکیش",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  }
+]
+}`;
+    
+   
+    var obj = JSON.parse(json);
+    
+
+    function printValues(obj) {
+        for(var k in obj) {
+            if(obj[k] instanceof Object) {
+                printValues(obj[k]);
+            } else {
+                document.write(obj[k] + "<br>");
+            };
+        }
+    };
+
+    document.write("<hr>");
+    
+    document.write(obj["symbols"][0]["info"][0]["date"] + "<br>"); 
+  </script>
+</body>
+</html>
