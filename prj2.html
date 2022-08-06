@@ -1,0 +1,136 @@
+<html><head>
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+     
+var createSublist = function(container, args) {
+    var ul = document.createElement('ul');
+    
+    for(var j = 0; j < args.length; j++) {
+      var row = args[j];
+      
+      var li = document.createElement('li');
+      li.innerText = row.symbol;
+      
+      var nodes = row.info;
+      if(nodes && nodes.length) {
+        createSublist(li, nodes);
+      }
+      
+      ul.appendChild(li);
+    }
+    
+    container.appendChild(ul);
+  };
+  
+  var data =[  
+  {
+"symbol": "کاذر",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  },
+   {
+"symbol": "خاور",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  },
+   {
+"symbol": "رکیش",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  }
+]
+;
+  
+  var container = document.getElementsByClassName('container')[0];  
+  if(container) 
+  { 
+    createSublist(container, data);
+  } 
+  else 
+  {
+    console.log('Container has not been found'); 
+  }
+});
+</script>
+</head>
+<body>
+    <div class="container">
+    </div>
+</body>
+
+</html>
