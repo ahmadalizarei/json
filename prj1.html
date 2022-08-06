@@ -1,0 +1,175 @@
+
+
+    <!DOCTYPE html>
+    <html dir="rtl" lang="fa">
+    <head>
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="robots" content="index,follow" />
+      <meta name="revisit-after" content="1 days" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta http-equiv="Content-Language" content="fa">
+    
+    
+        <title>
+        بورس
+      </title>
+<link rel="stylesheet" href="style.css">
+
+
+        
+    </head>
+    <body>
+    
+<script>
+    /* Storing multi-line JSON string in a JS variable
+    using the new ES6 template literals */
+    var json = `{
+"symbols":[
+  {
+"symbol": "کاذر",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  },
+   {
+"symbol": "خاور",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  },
+   {
+"symbol": "رکیش",
+	"id": 1,
+  "info":[
+    
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 19.78
+    
+  },
+     
+    {
+  
+	"date": "1401-03-30",
+	"percentage": 29.78
+    
+  }
+  ],
+  "numbers":[
+    {
+    	"date": "1401-03-30",
+	"number": 29.78
+  },
+  {
+  	"date": "1401-03-30",
+	"number": 29.78
+  }
+  ]
+  }
+]
+}`;
+    
+   
+    var obj = JSON.parse(json);
+    
+
+    function printValues(obj) {
+        for(var k in obj) {
+            if(obj[k] instanceof Object) {
+                printValues(obj[k]);
+            } else {
+                document.write(obj[k] + "<br>");
+            };
+        }
+    };
+
+    document.write("<hr>");
+    document.addEventListener('DOMContentLoaded',()=>{
+        
+        document.getElementById("symbol").innerText=obj["symbols"][0]["info"][0]["date"] ;
+        document.getElementsByClassName("info")[0].innerText=obj["symbols"][0]["info"][0]["date"] ;
+        const spaceCrafts = ['foo', 'bar', 'baz']
+const ol = createList(obj["symbols"][0]["info"][0]["date"])
+document.getElementsByClassName("symbol")[0].appendChild(ol);
+    })
+    const createList = (input) => {
+  const listView = document.createElement('ul');
+  for (const s of input) {
+    const listViewItem = document.createElement('li');
+    listViewItem.appendChild(document.createTextNode(s));
+    listView.appendChild(listViewItem);
+  }
+  return listView;
+}
+
+
+    </script>
+        
+     <div class="container" style="display: flex;flex-direction:row;flex:1;">
+<div class="symbol" id="symbol" style="display: flex;flex-direction:column;flex:20%">
+
+
+</div>
+    
+<div class="info" style="display: flex;flex-direction:row;flex:80%">
+    <ul id="u2">
+
+        
+    </ul>
+</div>
+     </div>
+
+      </div> 
+      
+    </body>
+    </html>
